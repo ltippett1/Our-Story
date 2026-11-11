@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff5f7;
+    color: #87465e;
+    font-family: Georgia, serif;
+}
+
+/*Navigation*/
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 245, 247, 0.95);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(150, 70, 100, 0.08);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #b65f80;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #87465e;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e88eae;
+}
+
+/*Welcome*/
+.welcome {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(
+        135deg,
+        #ffe1eb,
+        #fff5f7,
+        #fbdce8
+    );
+}
+
+.heart {
+    font-size: 75px;
+    animation: heartbeat 1.5s infinite;
+    color: #e88eae;
+}
+
+.subtitle {
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin: 15px 0;
+    color: #bd7891;
+}
+
+.welcome h1 {
+    font-size: clamp(40px, 7vw, 65px);
+    margin: 15px 0;
+}
+
+.welcome h2 {
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 450px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.since {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/*Button*/
+.main-button {
+    display: inline-block;
+    background: #e88eae;
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: #d66e96;
+    transform: translateY(-3px);
+}
+
+/*General Sections*/
+.section {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    margin-bottom: 35px;
+}
+
+/*Memory Gallery*/
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.memory-card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(150, 70, 100, 0.08);
+    transition: 0.3s;
+}
+
+.memory-card:hover {
+    transform: translateY(-7px);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.memory-card h3 {
+    margin: 15px 0 10px;
+}
+
+.memory-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/*Love letter*/
+.letters-section {
+    background: #ffe9ef;
+}
+
+.letter-card {
+    background: white;
+    max-width: 550px;
+    margin: 30px auto 0;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(150, 70, 100, 0.08);
+}
+
+.letter-card h3 {
+    margin-bottom: 25px;
+}
+
+.letter-card p {
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+/*Journey*/
+.journey-card,
+.counter-card {
+    background: white;
+    max-width: 500px;
+    padding: 30px;
+    margin: 25px auto;
+    border-radius: 18px;
+    line-height: 1.8;
+}
+
+.counter-card p {
+    font-size: 24px;
+    color: #d66e96;
+    margin-top: 15px;
+}
+
+/*Surprise*/
+.surprise-section {
+    background: #ffe9ef;
+}
+
+.surprise-section p {
+    margin: 20px 0;
+}
+
+#surpriseMessage {
+    max-width: 500px;
+    margin: 30px auto 0;
+    line-height: 1.8;
+    animation: fadeIn 1s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/*Footer*/
+footer {
+    background: #f4d5e0;
+    padding: 25px;
+    text-align: center;
+    line-height: 2;
+    font-size: 14px;
+}
+
+/*Animations*/
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Mobile design*/
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 65px 6%
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
+
+    .letter-card {
+        padding: 25px;
+    }
+}
