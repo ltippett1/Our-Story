@@ -17,7 +17,7 @@ const daysTogether = Math.floor(
     difference / (1000 * 60 * 60 * 24)
 );
 
-const counter = document.getElementById("relationshipcounter");
+const counter = document.getElementById("relationshipCounter");
 
 if (daysTogether >= 0) {
     counter.textContent = daysTogether + " days ❤️";
